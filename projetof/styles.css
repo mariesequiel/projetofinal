@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('https://www.nintendo.com/eu/media/images/10_share_images/games_15/nintendo_switch_download_software_1/2x1_NSwitchDS_TheMinesweeperCrewBomberExpedition_image1600w.jpg'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container {
+    text-align: center;
+    background-color: rgba(185, 176, 176, 0.747); 
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.945);
+}
+
+h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    color: #470606;
+}
+
+ul {
+    text-align: left;
+    color: rgb(102, 5, 5);
+    margin-bottom: 20px;
+}
+
+.button {
+    position: relative;
+    display: inline-block;
+    margin: 20px;
+}
+
+.button a {
+    color: rgb(243, 244, 248);
+    font-family: Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 36px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #4c607a;
+    display: block;
+    position: relative;
+    padding: 20px 40px;
+    text-shadow: 0px 1px 0px #000000;
+    filter: dropshadow(color=#000, offx=0px, offy=1px);
+    box-shadow: inset 0 1px 0 #a7a7b6, 0 10px 0 #404258;
+    border-radius: 5px;
+}
+
+.button a:active {
+    top: 10px;
+    background-color: #0c1533;
+    box-shadow: inset 0 1px 0 #0c0149, inset 0 -3px 0 #160d00;
+}
+
+.button:after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    padding: 4px;
+    position: absolute;
+    bottom: -15px;
+    left: -4px;
+    z-index: -1;
+    background-color: #2B1800;
+    border-radius: 5px;
+}
+
+#game-container {
+    text-align: center;
+    display: none; 
+}
+
+#status {
+    margin-bottom: 20px;
+}
+
+#timer-container, #bombs-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+#board {
+    display: grid;
+    gap: 10px;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #002bff, #7a00ff, #ff00c8, #ff0000);
+}
+
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+    background-color: #ccc; 
+    border: 2px solid #555;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px; 
+}
+
+.cell:active {
+    transform: scale(0.95); 
+}
+
+.cell[data-revealed="true"] {
+    cursor: default;
+    background-color: #ddd;
+    border-color: #888;
+}
+
+.alert-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(233, 207, 207, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    text-align: center;
+    z-index: 1000;
+}
+
+.alert-box button {
+    background-color: #4c607a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.alert-box button:hover {
+    background-color: #0c1533;
+}
